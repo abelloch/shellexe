@@ -1,25 +1,17 @@
 #!/bin/bash
-cat << ejercicio
-Condicionales:
 
-Ejercicio 1:
+#Condicionales - ejercicio 2 -Escribir un scripts que compare dos inputs (int) y nos de los siguientes mensajes:
+# "Los números ingresados son iguales”
+# “n1 es mayor que n2”
+# “n2 es mayor que n1”
 
-•	Verificar que usuario esta actualmente ejecutando
-•	Hacer un Script que verifique el usuario y en el caso que de que nos sea Root nos arroje un mensaje de error “No tiene acceso como root”
-ejercicio
 
-echo "El usuario actual es: "
-whoami
-#a="($whoami)"
-b="ROOT"
+read -p"ingrese un numero: " n1
+read -p"ingrese un numero: " n2
 
-while true ; do
-    read -p "ingresar usuario : " usuario 
-
-    if [[ "$b" = "$usuario" ]];then
-        echo "Bienvenido Root"
-        break 
-    else
-        echo "NO tiene acceso como Root"
-    fi
- done
+if [ $n1 -gt $n2 ]
+then
+echo "N1 es mayor que N2"
+else
+echo "N2 es mayor que N1"
+fi
