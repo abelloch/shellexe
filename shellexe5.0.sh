@@ -6,20 +6,25 @@
 
 echo " el nombre de este  script es : $0 y el pid es $$"
 
+#Refencia a buscar
 pid=$$
-echo $pid
 
-while true ; do 
-    read -p"Ingresa numero del PID: " i
-    ((int++))
 
-    if [[ $i = $pid ]] ; then
-        echo "Felicidades, Adivinaste el numero correcto" $pid
-        echo "INTENTOS REALIZADO : " $int++
-        break
-    elif [[ $i < $pid ]] ; then
-        echo "Numero ingresado es Menor al valor PID"
-    elif [[ $i > $pid ]] ; then 
-        echo "Numero ingresado es Mayor al valor PID"
-    if
+read -p "Escribe un numero " numero1;
+#numero=$(shuf -i 1-100 -n 1)
+
+numero=$pid
+intento=1
+while [[ "$numero" -ne "$numero1" ]]
+    do
+if [[ "$numero1" -ge "$numero" ]]; then 
+echo "el numero ingresado es mayor"
+elif [[ "$numero1" -lt "$numero" ]]; then 
+echo "el numero ingresado es menor"
+fi
+read -p "Escribe un numero " numero1
+let "intento+=1" 
 done
+echo "El numero es $numero"
+echo "Numero de intentos $intento"
+
