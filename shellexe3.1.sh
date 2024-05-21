@@ -9,9 +9,11 @@
 read -p"ingrese un numero: " n1
 read -p"ingrese un numero: " n2
 
-if [ $n1 -gt $n2 ]
-then
-echo "N1 es mayor que N2"
-else
-echo "N2 es mayor que N1"
-fi
+
+    if [ "$n1" -eq "$n2" ]; then
+      echo "los numeros ingresado son iguales"
+    elif [ "$n1" -gt "$n2"  ]; then
+        echo "Numero 1 es mayor que Numero 2"
+    else
+        echo "Numero 2 es menor que Numero1"
+    fi
